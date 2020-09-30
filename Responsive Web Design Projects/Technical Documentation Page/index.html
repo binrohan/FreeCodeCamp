@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Technical Documentation</title>
+</head>
+<body>
+    <nav id="navbar">
+        <header>
+            <h1>C# Documentation</h1>
+        </header>
+        <a href="#Introduction_to_C#_and_.NET" class="nav-link ex">Introduction to C# and .NET</a>
+        <a href="#Hello_World" class="nav-link">Hello World</a>
+        <a href="#Namespaces" class="nav-link">Namespaces</a>
+        <a href="#Basic_Types" class="nav-link">Basic Types</a>
+        <a href="#Generics" class="nav-link">Generics</a>
+        <a href="#Delegates" class="nav-link">Delegates</a>
+    </nav>
+    <main id="main-doc">
+        <section id="Introduction_to_C#_and_.NET" class="main-section">
+            <header>
+                <h2>Introduction to C# and .NET</h2>
+            </header>
+            <article>
+                <p>C# is an elegant and type-safe object-oriented language that enables developers to build a variety of secure and robust applications that run in the .NET ecosystem. The .NET ecosystem is composed of all the implementations of .NET, including both but not limited to .NET Core, and .NET Framework. This article focuses on .NET Framework. You can use C# to create Windows client applications, XML Web services, distributed components, client-server applications, database applications, and much, much more.</p>
+                <p>C# syntax is highly expressive, yet it is also simple and easy to learn. The curly brace syntax of C# will be instantly recognizable to anyone familiar with C, C++, or Java. Developers who know any of these languages are typically able to begin to work productively in C# within a short time. C# syntax simplifies many of the complexities of C++ and provides powerful features such as nullable types, enumerations, delegates, lambda expressions, and direct memory access. C# supports generic methods and types, which provide increased type safety and performance, and iterators, which enable implementers of collection classes to define custom iteration behaviors that are simple to use by client code. Language-Integrated Query (LINQ) expressions make the strongly typed query a first-class language construct.</p>
+                <p>As an object-oriented language, C# supports the concepts of encapsulation, inheritance, and polymorphism. All variables and methods, including the Main method, the application's entry point, are encapsulated within class definitions. A class may inherit directly from one parent class, but it may implement any number of interfaces. Methods that override virtual methods in a parent class require the override keyword as a way to avoid accidental redefinition. In C#, a struct is like a lightweight class; it is a stack-allocated type that can implement interfaces but does not support inheritance.</p>
+                <p>In addition to these basic object-oriented principles, C# makes it easy to develop software components through several innovative language constructs, including the following:</p>
+                <ul>
+                    <li>Encapsulated method signatures called delegates, which enable type-safe event notifications.</li>
+                    <li>Properties, which serve as accessors for private member variables.</li>
+                    <li>Attributes, which provide declarative metadata about types at run time.</li>
+                    <li>Inline XML documentation comments.</li>
+                    <li>Language-Integrated Query (LINQ), which provides built-in query capabilities across a variety of data sources.</li>
+                </ul>
+            </article>
+        </section>
+        <section id="Hello_World" class="main-section">
+            <header>
+                <h2>Hello World</h2>
+            </header>
+            <article>
+                <p>Here, you will learn to create a simple console application in C# and understand the basic building blocks of a console application.</p>
+                <p>C# can be used in a window-based, web-based, or console application. To start with, we will create a console application to work with C#.</p>
+                <p>Every console application starts from the Main() method of the Program class. The following example displays "Hello World!!" on the console.</p>
+                <code>
+                    <pre>
+                    using System;
+                    using System.Collections.Generic;
+                    using System.Linq; 
+                    using System.Text; 
+                    using System.Threading.Tasks; 
+                    
+                    namespace CSharpTutorials  
+                    { 
+                        class Program 
+                        { 
+                            static void Main(string[] args) 
+                            { 
+                                string message = "Hello World!!"; 
+ 
+                                Console.WriteLine(message); 
+                            } 
+                        } 
+                    } 
+                    </pre>
+                </code>
+            </article>
+        </section>
+        <section id="Namespaces" class="main-section">
+            <header>
+                <h2>Namespaces</h2>
+            </header>
+            <article>
+                <p>Namespaces are heavily used in C# programming in two ways. First, .NET uses namespaces to organize its many classes, as follows:</p>
+                <code>
+                    <pre>
+                        System.Console.WriteLine("Hello World!");
+                    </pre>
+                </code>
+                <p>System is a namespace and Console is a class in that namespace. The using keyword can be used so that the complete name is not required, as in the following example:</p>
+                <code>
+                    <pre>
+                        using System;
+                    </pre>
+                    <pre>
+                        Console.WriteLine("Hello");
+                        Console.WriteLine("World!");
+                    </pre>
+                </code>
+                <p>For more information, see the using Directive.</p>
+                <p>Second, declaring your own namespaces can help you control the scope of class and method names in larger programming projects. Use the namespace keyword to declare a namespace, as in the following example:</p>
+                <code>
+                    <pre>
+                        namespace SampleNamespace
+                        {
+                            class SampleClass
+                            {
+                                public void SampleMethod()
+                                {
+                                    System.Console.WriteLine(
+                                    "SampleMethod inside SampleNamespace");
+                                }
+                            }
+                        }
+                    </pre>
+                </code>
+                <p>The name of the namespace must be a valid C# identifier name.</p>
+                <div class="overview">
+                    <p>Namespaces have the following properties:</p>
+                    <ul>
+                        <li>They organize large code projects.</li>
+                        <li>They are delimited by using the . operator.</li>
+                        <li>The using directive obviates the requirement to specify the name of the namespace for every class.</li>
+                        <li>The global namespace is the "root" namespace: global::System will always refer to the .NET System namespace.</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+        <section id="Basic_Types" class="main-section">
+            <header>
+                <h2>Basic Types</h2>
+            </header>
+            <article>
+                <p>C# is a strongly typed language. Every variable and constant has a type, as does every expression that evaluates to a value. Every method signature specifies a type for each input parameter and for the return value. The .NET class library defines a set of built-in numeric types as well as more complex types that represent a wide variety of logical constructs, such as the file system, network connections, collections and arrays of objects, and dates. A typical C# program uses types from the class library as well as user-defined types that model the concepts that are specific to the program's problem domain.</p>
+                <p>The information stored in a type can include the following:</p>
+                <ul>
+                    <li>The storage space that a variable of the type requires.</li>
+                    <li>The maximum and minimum values that it can represent.</li>
+                    <li>The members (methods, fields, events, and so on) that it contains.</li>
+                    <li>The base type it inherits from.</li>
+                    <li>The location where the memory for variables will be allocated at run time.</li>
+                    <li>The kinds of operations that are permitted.</li>
+                </ul>
+                <p>The compiler uses type information to make sure that all operations that are performed in your code are type safe. For example, if you declare a variable of type int, the compiler allows you to use the variable in addition and subtraction operations. If you try to perform those same operations on a variable of type bool, the compiler generates an error, as shown in the following example:</p>
+                <code>
+                    <pre>
+                        int a = 5;
+                        int b = a + 2; //OK
+
+                        bool test = true;
+                        int c = a + test;
+                    </pre>
+                </code>
+                <p>The compiler embeds the type information into the executable file as metadata. The common language runtime (CLR) uses that metadata at run time to further guarantee type safety when it allocates and reclaims memory.</p>
+                <h3>Specifying types in variable declarations</h3>
+                <p>When you declare a variable or constant in a program, you must either specify its type or use the var keyword to let the compiler infer the type. The following example shows some variable declarations that use both built-in numeric types and complex user-defined types:</p>
+                <code>
+                    <pre>
+                        // Declaration only:
+                        float temperature;
+                        string name;
+                        MyClass myClass;
+
+                        // Declaration with initializers (four examples):
+                        char firstLetter = 'C';
+                        var limit = 3;
+                        int[] source = { 0, 1, 2, 3, 4, 5 };
+                        var query = from item in source
+                                    where item <= limit
+                                    select item;
+                    </pre>
+                </code>
+                <p>The types of method parameters and return values are specified in the method signature. The following signature shows a method that requires an int as an input argument and returns a string:</p>
+                <code>
+                    <pre>
+                        public string GetName(int ID)
+                        {
+                            if (ID < names.Length)
+                                return names[ID];
+                            else
+                                return String.Empty;
+                        }
+                        private string[] names = { "Spencer", "Sally", "Doug" };
+                    </pre>
+                </code>
+                <p>After a variable is declared, it cannot be re-declared with a new type, and it cannot be assigned a value that is not compatible with its declared type. For example, you cannot declare an int and then assign it a Boolean value of true. However, values can be converted to other types, for example when they are assigned to new variables or passed as method arguments. A type conversion that does not cause data loss is performed automatically by the compiler. A conversion that might cause data loss requires a cast in the source code.</p>
+                <p>For more information, see Casting and type conversions.</p>
+            </article>
+        </section>
+        <section id="Generics" class="main-section">
+            <header>
+                <h2>Generics </h2>
+            </header>
+            <article>
+                <p>Generics introduce the concept of type parameters to .NET, which make it possible to design classes and methods that defer the specification of one or more types until the class or method is declared and instantiated by client code. For example, by using a generic type parameter T, you can write a single class that other client code can use without incurring the cost or risk of runtime casts or boxing operations, as shown here:</p>
+                <code>
+                    <pre>
+                        // Declare the generic class.
+                        public class GenericList<T>
+                        {
+                            public void Add(T input) { }
+                        }
+                        class TestGenericList
+                        {
+                            private class ExampleClass { }
+                            static void Main()
+                            {
+                                // Declare a list of type int.
+                                GenericList<int> list1 = new GenericList<int>();
+                                list1.Add(1);
+
+                                // Declare a list of type string.
+                                GenericList<string> list2 = new GenericList<string>();
+                                list2.Add("");
+
+                                // Declare a list of type ExampleClass.
+                                GenericList<ExampleClass> list3 = new GenericList<ExampleClass>();
+                                list3.Add(new ExampleClass());
+                            }
+                        }
+                    </pre>
+                </code>
+                <p>Generic classes and methods combine reusability, type safety, and efficiency in a way that their non-generic counterparts cannot. Generics are most frequently used with collections and the methods that operate on them. The System.Collections.Generic namespace contains several generic-based collection classes. The non-generic collections, such as ArrayList are not recommended and are maintained for compatibility purposes. For more information, see Generics in .NET.</p>
+                <p>Of course, you can also create custom generic types and methods to provide your own generalized solutions and design patterns that are type-safe and efficient. The following code example shows a simple generic linked-list class for demonstration purposes. (In most cases, you should use the List<T> class provided by .NET instead of creating your own.) The type parameter T is used in several locations where a concrete type would ordinarily be used to indicate the type of the item stored in the list. It is used in the following ways:</p>
+                <ul>
+                    <li>As the type of a method parameter in the AddHead method.</li>
+                    <li>As the return type of the Data property in the nested Node class.</li>
+                    <li>As the type of the private member data in the nested class.</li>
+                </ul>
+                <p>Note that T is available to the nested Node class. When GenericList<T> is instantiated with a concrete type, for example as a GenericList<int>, each occurrence of T will be replaced with int.</p>
+                <code>
+                    <pre>
+                        // type parameter T in angle brackets
+                        public class GenericList<T>
+                        {
+                            // The nested class is also generic on T.
+                            private class Node
+                            {
+                                // T used in non-generic constructor.
+                                public Node(T t)
+                                {
+                                    next = null;
+                                    data = t;
+                                }
+
+                                private Node next;
+                                public Node Next
+                                {
+                                    get { return next; }
+                                    set { next = value; }
+                                }
+
+                                // T as private member data type.
+                                private T data;
+
+                                // T as return type of property.
+                                public T Data
+                                {
+                                    get { return data; }
+                                    set { data = value; }
+                                }
+                            }
+
+                            private Node head;
+
+                            // constructor
+                            public GenericList()
+                            {
+                                head = null;
+                            }
+
+                            // T as method parameter type:
+                            public void AddHead(T t)
+                            {
+                                Node n = new Node(t);
+                                n.Next = head;
+                                head = n;
+                            }
+
+                            public IEnumerator<T> GetEnumerator()
+                            {
+                                Node current = head;
+
+                                while (current != null)
+                                {
+                                    yield return current.Data;
+                                    current = current.Next;
+                                }
+                            }
+                        }
+                    </pre>
+                </code>
+                <p>The following code example shows how client code uses the generic GenericList<T> class to create a list of integers. Simply by changing the type argument, the following code could easily be modified to create lists of strings or any other custom type:</p>
+                <code>
+                    <pre>
+                        class TestGenericList
+                        {
+                            static void Main()
+                            {
+                                // int is the type argument
+                                GenericList<int> list = new GenericList<int>();
+
+                                for (int x = 0; x < 10; x++)
+                                {
+                                    list.AddHead(x);
+                                }
+
+                                foreach (int i in list)
+                                {
+                                    System.Console.Write(i + " ");
+                                }
+                                System.Console.WriteLine("\nDone");
+                            }
+                        }
+                    </pre>
+                </code>
+                <div class="overview">
+                    <h3>Generics overview</h3>
+                    <ul>
+                        <li>Use generic types to maximize code reuse, type safety, and performance.</li>
+                        <li>The most common use of generics is to create collection classes.</li>
+                        <li>The .NET class library contains several generic collection classes in the System.Collections.Generic namespace. These should be used whenever possible instead of classes such as ArrayList in the System.Collections namespace.</li>
+                        <li>You can create your own generic interfaces, classes, methods, events, and delegates.</li>
+                        <li>Generic classes may be constrained to enable access to methods on particular data types.</li>
+                        <li>Information on the types that are used in a generic data type may be obtained at run-time by using reflection.</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+        <section id="Delegates" class="main-section">
+            <header>
+                <h2>Delegates</h2>
+            </header>
+            <article>
+                <h3>Introduction to Delegates</h3>
+                <p>Delegates provide a late binding mechanism in .NET. Late Binding means that you create an algorithm where the caller also supplies at least one method that implements part of the algorithm.</p>
+                <p>For example, consider sorting a list of stars in an astronomy application. You may choose to sort those stars by their distance from the earth, or the magnitude of the star, or their perceived brightness.</p>
+                <p>In all those cases, the Sort() method does essentially the same thing: arranges the items in the list based on some comparison. The code that compares two stars is different for each of the sort orderings.</p>
+                <p>These kinds of solutions have been used in software for half a century. The C# language delegate concept provides first class language support, and type safety around the concept.</p>
+                <p>As you'll see later in this series, the C# code you write for algorithms like this is type safe, and leverages the language and the compiler to ensure that the types match for arguments and return types.</p>
+                <h3>Language Design Goals for Delegates</h3>
+                <p>The language designers enumerated several goals for the feature that eventually became delegates.
+
+                    The team wanted a common language construct that could be used for any late binding algorithms. That enables developers to learn one concept, and use that same concept across many different software problems.
+                    
+                    Second, the team wanted to support both single and multicast method calls. (Multicast delegates are delegates that chain together multiple method calls. You'll see examples later in this series.)
+                    
+                    The team wanted delegates to support the same type safety that developers expect from all C# constructs.</p>
+                    <p>Finally, the team recognized that an event pattern is one specific pattern where delegates, or any late binding algorithm, is very useful. The team wanted to ensure that the code for delegates could provide the basis for the .NET event pattern.
+
+                        The result of all that work was the delegate and event support in C# and .NET. The remaining articles in this section will cover the language features, the library support, and the common idioms that are used when you work with delegates.</p>
+                    <p>You'll learn about the delegate keyword and what code it generates. You'll learn about the features in the System.Delegate class, and how those features are used. You'll learn how to create type safe delegates, and how to create methods that can be invoked through delegates. You'll also learn how to work with delegates and events by using Lambda expressions. You'll see where delegates become one of the building blocks for LINQ. You'll learn how delegates are the basis for the .NET event pattern, and how they are different.
+
+                        Overall, you'll see how delegates are an integral part of programming in .NET and working with the framework APIs.</p>
+            </article>
+        </section>
+    </main>
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>

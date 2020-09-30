@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Survey Form</title>
+</head>
+<body>
+    <div class="cover">
+
+    </div>
+    <header>
+        <h1 id="title">Batman Fan Survey Form</h1>
+        <p id="description">Let us know, how much do you love the Dark Knight</p>
+    </header>
+    <main>
+        <form id="survey-form">
+            <div>
+                <label for="name" id="name-label">
+                    Full Name: 
+                    <input type="text" id="name" required placeholder="Jason Todd">
+                </label>
+            </div>
+            <div>
+                <label for="email" id="email-label">
+                    Email: 
+                    <input type="email" id="email" required placeholder="tim@wayne.com">
+                </label>
+            </div>
+            <div>
+                <label for="number" id="number-label">
+                    Age: 
+                    <input type="number" id="number" max="79" min="7" placeholder="Type your age">
+                </label>
+            </div>
+            <div>
+                <label for="dropdown">
+                    Choose you favorite Batman cast: 
+                    <select name="batman" id="dropdown">
+                        <option value="west">Adam West</option>
+                        <option value="keaton">Michael Keaton</option>
+                        <option value="clooney">George Clooney</option>
+                        <option value="bale">Christian Bale</option>
+                        <option value="ben">Ben Affleck</option>
+                        <option value="pattinson">Robert Pattinson</option>
+                    </select>
+                </label>
+            </div>
+            <div>
+                <label for="sidekick">
+                    Who is your favorite member from BatFamily:
+                    <label for="radio1">
+                        <input type="radio" name="sidekick" id="radio1" value="nightwing">
+                        Dick Grayson AKA Nightwing
+                    </label>
+                    <label for="radio2">
+                        <input type="radio" name="sidekick" id="radio2" value="redhood">
+                        Jason Todd AKA Red Hood 
+                    </label>
+                    <label for="radio3">
+                        <input type="radio" name="sidekick" id="radio3" value="redrobin">
+                        Tim Drake AKA Red Robin 
+                    </label>
+                    <label for="radio4">
+                        <input type="radio" name="sidekick" id="radio4" value="batblood">
+                        Damian Wayne
+                    </label>
+                </label>
+            </div>
+            <div>
+                <label for="checkbox">
+                    Why you are a fan of Batman: 
+                    <label for="cb1">
+                        <input type="checkbox" name="checkbox" id="cb1" value="detective">
+                        World Greatest Detective
+                    </label>
+                    <label for="cb2">
+                        <input type="checkbox" name="checkbox" id="cb2" value="rich">
+                        I am Rich - batman
+                    </label>
+                    <label for="cb3">
+                        <input type="checkbox" name="checkbox" id="cb3" value="agility">
+                        Adaptive, Agile, Intelligent, Stealthy
+                    </label>
+                    <label for="cb4">
+                        <input type="checkbox" name="checkbox" id="cb4" value="gadgets">
+                        Awesome Gadgets
+                    </label>
+                    <label for="cb5">
+                        <input type="checkbox" name="checkbox" id="cb5" value="doesn't kill">
+                        Batman doesn't kill
+                    </label>
+                    <label for="cb6">
+                        <input type="checkbox" name="checkbox" id="cb6" value="martial">
+                        Batman knows 127 styles of martial arts
+                    </label>
+                    <label for="cb7">
+                        <input type="checkbox" name="checkbox" id="cb7" value="determind">
+                        Determinded
+                    </label>
+                </label>
+            </div>
+            <div>
+                <label for="textarea">Any thing else you like about Batman: </label>
+                <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
+            </div>
+            <div>
+                <input id="submit" type="submit" value="Submit">
+            </div>
+        </form>
+    </main>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>
